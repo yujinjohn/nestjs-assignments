@@ -24,3 +24,13 @@ isPrime(@Param('number') number: number): { isPrime: boolean } {
   }
   return { isPrime: true };
 }
+ // Assignment 3: Factorial Calculator
+ @Get('factorial/:number')
+ getFactorial(@Param('number') number: number): { factorial: number } {
+   let factorial = 1;
+   for (let i = 1; i <= number; i++) {
+     factorial *= i;
+   }
+   return { factorial };
+ }
+}
