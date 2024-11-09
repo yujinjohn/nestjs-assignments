@@ -15,3 +15,12 @@ export class AssignmentsController {
 
     return { sequence };
   }
+// Assignment 2: Prime Number Checker
+@Get('prime/:number')
+isPrime(@Param('number') number: number): { isPrime: boolean } {
+  if (number <= 1) return { isPrime: false };
+  for (let i = 2; i * i <= number; i++) {
+    if (number % i === 0) return { isPrime: false };
+  }
+  return { isPrime: true };
+}
